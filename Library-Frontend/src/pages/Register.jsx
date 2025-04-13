@@ -109,7 +109,7 @@ const Register = () => {
       return;
     }
     try {
-      const response = await axios.post("lms-backend-production-2da1.up.railway.app/api/register", user);
+      const response = await axios.post("lms-backend-production-0f0a.up.railway.app/api/register", user);
       alert(response.data); // Show success message
       navigate("/login");
     } catch (error) {
