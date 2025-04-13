@@ -88,9 +88,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const API = axios.create({
-  baseURL:  "https://lms-backend-production-0f0a.up.railway.app", 
-});
+
 
 
 const Register = () => {
@@ -114,7 +112,7 @@ const Register = () => {
       return;
     }
     try {
-      const response = await API.post(`/api/register`, user);
+      const response = await API.post("https://lms-backend-production-0f0a.up.railway.app/api/register", user);
       alert(response.data); // Show success message
       console.log(response);
       navigate("/login");
