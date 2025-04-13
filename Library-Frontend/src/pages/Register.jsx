@@ -111,15 +111,25 @@ const Register = () => {
       setMessage("Phone number must be exactly 10 digits.");
       return;
     }
-    try {
-      const response = await axios.post("https://lms-backend-production-0f0a.up.railway.app/api/register", user);
-      alert(response.data); // Show success message
-      console.log(response);
+  try {
+      const response = await axios.post(
+        "https://lms-backend-production-0f0a.up.railway.app/api/register", 
+        user,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      alert(response.data);
       navigate("/login");
     } catch (error) {
-      setMessage(error.response?.data || "Registration failed!"); // Show error message
+      console.error(error);
+      setMessage(error.response?.data || "Registration failed!");
     }
   };
+
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-green-400 to-blue-500 p-4">
