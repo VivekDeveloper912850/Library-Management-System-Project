@@ -114,7 +114,7 @@ const Register = () => {
       return;
     }
     try {
-      const response = await API.post("/api/register", user);
+      const response = await API.post(`/api/register`, user);
       alert(response.data); // Show success message
       console.log(response);
       navigate("/login");
