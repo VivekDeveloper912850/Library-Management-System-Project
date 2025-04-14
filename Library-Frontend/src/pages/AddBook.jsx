@@ -274,7 +274,7 @@ const AddBook = ({ fetchBooks }) => {
     }
 
     try {
-      await axios.post("http://localhost:8080/api/admins/add", book);
+      await axios.post("https://lms-backend-production-0f0a.up.railway.app/api/admins/add", book);
       alert("Book added successfully!");
       setBook({ title: "", author: "", isbn: "", category: "", quantity: "" }); // Reset all fields
       fetchBooks(); // Refresh books list
