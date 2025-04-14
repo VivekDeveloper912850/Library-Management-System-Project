@@ -306,7 +306,7 @@ const SearchBook = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/books");
+      const response = await axios.get("https://lms-backend-production-0f0a.up.railway.app/api/books");
       setBooks(response.data);
     } catch {
       setMessage("Error loading books. Try again.");
@@ -320,7 +320,7 @@ const SearchBook = () => {
     }
     try {
       const response = await axios.get(
-        `http://localhost:8080/api/books/search?keyword=${searchTerm}`
+        `https://lms-backend-production-0f0a.up.railway.app/api/books/search?keyword=${searchTerm}`
       );
       setBooks(response.data);
     } catch (error) {
@@ -336,7 +336,7 @@ const SearchBook = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/borrow-book/${userId}/${bookId}`
+        `https://lms-backend-production-0f0a.up.railway.app/api/borrow-book/${userId}/${bookId}`
       );
       setMessage(response.data);
       fetchBooks();
