@@ -7,7 +7,7 @@ const ReturnedBooksTable = () => {
   const [returnedBooks, setReturnedBooks] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:8080/api/returned-books")
+    axios.get("https://lms-backend-production-0f0a.up.railway.app/api/returned-books")
       .then(response => setReturnedBooks(response.data))
       .catch(error => console.error("Error fetching returned books:", error));
   }, []);
