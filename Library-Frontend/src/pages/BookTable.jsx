@@ -75,7 +75,7 @@ import axios from "axios";
 const BooksTable = ({ books, fetchBooks }) => {
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/api/admins/delete/${id}`);
+      await axios.delete(`https://lms-backend-production-0f0a.up.railway.app/api/admins/delete/${id}`);
       fetchBooks();
     } catch (error) {
       console.error("Error deleting book:", error);
@@ -84,7 +84,7 @@ const BooksTable = ({ books, fetchBooks }) => {
 
   const handleApprove = async (id) => {
     try {
-      await axios.put(`http://localhost:8080/api/admins/approve/${id}`);
+      await axios.put(`https://lms-backend-production-0f0a.up.railway.app/api/admins/approve/${id}`);
       fetchBooks();
     } catch (error) {
       console.error("Error approving book:", error);
@@ -93,7 +93,7 @@ const BooksTable = ({ books, fetchBooks }) => {
 
   const handleReject = async (id) => {
     try {
-      await axios.put(`http://localhost:8080/api/admins/reject/${id}`);
+      await axios.put(`https://lms-backend-production-0f0a.up.railway.app/api/admins/reject/${id}`);
       fetchBooks();
     } catch (error) {
       console.error("Error rejecting book:", error);
