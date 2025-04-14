@@ -187,7 +187,7 @@ const UsersTable = () => {
 
   const fetchUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/admin/users");
+      const response = await axios.get("https://lms-backend-production-0f0a.up.railway.app/api/admin/users");
       setUsers(response.data);
     } catch (error) {
       console.error("Error fetching users:", error);
