@@ -89,7 +89,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/api/login", credentials);
+      const response = await axios.post("https://lms-backend-production-0f0a.up.railway.app/api/login", credentials);
       alert("Login successful!");
       localStorage.setItem("userToken", response.data.token);
       localStorage.setItem("userId", response.data);
