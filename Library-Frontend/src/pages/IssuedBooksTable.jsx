@@ -162,7 +162,7 @@ const IssuedBooksTable = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-      axios.get("http://localhost:8080/api/issued-books")
+      axios.get("https://lms-backend-production-0f0a.up.railway.app/api/issued-books")
       .then(response => setBooks(response.data))
       
       .catch(error => console.error("Error fetching issued books:", error));
@@ -170,7 +170,7 @@ const IssuedBooksTable = () => {
 
   // ✅ Return book function
   const returnBook = (borrowId) => {
-      axios.put(`http://localhost:8080/api/return-book/${borrowId}`)
+      axios.put(`https://lms-backend-production-0f0a.up.railway.app/api/return-book/${borrowId}`)
       .then(() => {
        alert("Book returned successfully!"); 
         setBooks(books.filter(b => b.id != borrowId)); // Remove from issued books
