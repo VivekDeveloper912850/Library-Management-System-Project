@@ -620,7 +620,7 @@ const BorrowedBook = () => {
 
     const fetchBorrowedBooks = async () => {
       try {
-        const response = await axios.get(`http://localhost:8080/api/borrowed-books/${userId}`);
+        const response = await axios.get(`https://lms-backend-production-0f0a.up.railway.app/api/borrowed-books/${userId}`);
         setBorrowedBooks(response.data);
       } catch {
         setError("Failed to fetch borrowed books.");
@@ -635,7 +635,7 @@ const BorrowedBook = () => {
   // Handle Book Return
   const handleReturnBook = async (borrowId) => {
     try {
-      await axios.put(`http://localhost:8080/api/return-book/${borrowId}`);
+      await axios.put(`https://lms-backend-production-0f0a.up.railway.app/api/return-book/${borrowId}`);
       alert("Book returned successfully!");
       setBorrowedBooks((prevBooks) =>
         prevBooks.map((book) =>
