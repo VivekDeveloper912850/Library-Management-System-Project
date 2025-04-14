@@ -15,10 +15,10 @@ const ReturnedBook = () => {
   useEffect(() => {
     const fetchReturnedBooks = async () => {
       try {
-        const returnedResponse = await axios.get(`http://localhost:8080/api/returned-books/${userId}`);
+        const returnedResponse = await axios.get(`https://lms-backend-production-0f0a.up.railway.app/api/returned-books/${userId}`);
         setReturnedBooks(returnedResponse.data);
 
-        const borrowedResponse = await axios.get(`http://localhost:8080/api/borrowed-books/${userId}`);
+        const borrowedResponse = await axios.get(`https://lms-backend-production-0f0a.up.railway.app/api/borrowed-books/${userId}`);
         const borrowedData = borrowedResponse.data;
 
         const borrowedMap = {};
