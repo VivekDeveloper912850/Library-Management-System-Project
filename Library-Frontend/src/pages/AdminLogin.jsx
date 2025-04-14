@@ -74,7 +74,7 @@ const AdminLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8080/api/admin/login", admin);
+      const response = await axios.post("https://lms-backend-production-0f0a.up.railway.app/api/admin/login", admin);
       alert("Admin Login Successful!");
       localStorage.setItem("adminToken", response.data.token);
       navigate("/admin/dashboard");
