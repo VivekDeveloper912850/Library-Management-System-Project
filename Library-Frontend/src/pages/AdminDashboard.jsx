@@ -77,7 +77,7 @@ const AdminDashboard = () => {
 
   const fetchBooks = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/admins/books");
+      const response = await axios.get("https://lms-backend-production-0f0a.up.railway.app/api/admins/books");
       setBooks(response.data);
     } catch (error) {
       console.error("Error fetching books:", error);
