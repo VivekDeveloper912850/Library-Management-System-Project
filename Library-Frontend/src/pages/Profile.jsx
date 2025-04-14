@@ -170,9 +170,9 @@ const Profile = () => {
 
   useEffect(() => {
     // Fetch user data from backend
-    axios.get("http://localhost:8080/api/user-id")
+    axios.get("https://lms-backend-production-0f0a.up.railway.app/api/user-id")
       .then(response => {
-        axios.get(`http://localhost:8080/api/user/${response.data}`)
+        axios.get(`https://lms-backend-production-0f0a.up.railway.app/api/user/${response.data}`)
           .then(res => setUser(res.data))
           .catch(err => console.error("User fetch error:", err));
       })
